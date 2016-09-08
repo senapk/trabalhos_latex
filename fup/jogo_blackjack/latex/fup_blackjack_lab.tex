@@ -9,7 +9,6 @@
 \usepackage{graphicx} 
 \usepackage{xcolor}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%% Alguns Pacotes que podemos utilizar%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,10 +157,10 @@ Em C e C++ você pode usar a função \code{rand()} para gerar um número aleat�
 
 	int main(){
 		srand(time(NULL)); //inicia a aleatoriedade
-	int num = rand() % 5; // 0, 1, 2, 3 ou 4
-	std::cout << num << std::endl;
-	return 0;
-}
+		int num = rand() % 5; // 0, 1, 2, 3 ou 4
+		std::cout << num << std::endl;
+		return 0;
+	}
 	\end{lstlisting}
 \end{mdframed}
 
@@ -278,19 +277,18 @@ Vou lhe ajudar com a lógica ok?
 \begin{mdframed}[nobreak=true]
 	\centering{Pseudocódigo para lógica do jogo}
 	\begin{lstlisting}
-		mao_mesa comeca vazia
-		mao_jogador comeca vazia
-		puxa uma carta para mao_mesa
-		puxa duas cartas para mao_jogador
-		PARAR = false
-		Enquanto jogador nao PARAR ou nao estourar:
+		_mao_mesa comeca vazia
+		_mao_jogador comeca vazia
+		puxa uma carta para _mao_mesa
+		puxa duas cartas para _mao_jogador
+		Enquanto jogador nao estourar:
 			mostrar maos
 			pergunta opcao ao jogador
-			se opcao for pedir
-				puxa carta para mao_jogador
-			senao se opcao for parar
-				PARAR = true
-		Enquanto mesa nao ganhar ou estourar
+			se opcao for pedir:
+				puxa carta para _mao_jogador
+			senao se opcao for parar:
+				quebre o laco
+		Enquanto mesa nao ganhar ou estourar:
 			puxar carta para mesa
 			mostrar maos
 
