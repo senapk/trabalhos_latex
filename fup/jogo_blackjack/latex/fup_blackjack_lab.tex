@@ -239,7 +239,7 @@ passar de 21, vamos descontando nossas cartas As, para fazer o valor baixar.
 \begin{mdframed}[nobreak=true]
 	\centering{Pseudocódigo para calcular o valor de uma mao}
 	\begin{lstlisting}
-	int valor_mao(vector<int> mao){
+	int contar_mao(vector<int> mao){
 		total = 0
 		n_as = 0
 		Para cada carta na mao:
@@ -281,16 +281,23 @@ Vou lhe ajudar com a lógica ok?
 		_mao_jogador comeca vazia
 		puxa uma carta para _mao_mesa
 		puxa duas cartas para _mao_jogador
-		Enquanto jogador nao estourar:
+		Enquanto jogador nao estourar
 			mostrar maos
 			pergunta opcao ao jogador
-			se opcao for pedir:
+			Se opcao for pedir
 				puxa carta para _mao_jogador
-			senao se opcao for parar:
+			Senao se opcao for parar
 				quebre o laco
-		Enquanto mesa nao ganhar ou estourar:
-			puxar carta para mesa
-			mostrar maos
+            Fim
+        Fim
+        Se jogador estourou
+            jogador perdeu 
+        Senao
+            Enquanto mesa nao ganhar e nao estourar
+                puxar carta para mesa
+                mostrar maos
+            Fim
+        Fim
 
 	\end{lstlisting}
 \end{mdframed}
